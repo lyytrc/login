@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>注册页</title>
+</head>
+<body>
+<h1>注册页</h1>
+{#错误提示#}
+<div style="color: blue" name="message">
+  {% if message %}
+    {{ message }}
+  {% endif %}
+</div>
+
+{#- 注册表单 -#}
+<form action="/register/" method="post">
+  {% csrf_token %}
+    <lable>用户名：</lable>
+    <input type="text" name="username" placeholder="用户名1-20字符"><br>
+    <lable>密码：</lable>
+    <input type="password" name="password" placeholder="请输入密码 20字以下"><br>
+    <lable>邮箱：</lable>
+    <input type="email" name="email" placeholder="请输入邮箱"><br>
+
+    <input type="submit" value="确认注册">
+</form>
+</body>
+</html>
